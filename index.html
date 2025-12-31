@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2026 ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #8e2de2, #ff00cc, #ff6b9d, #ffafbd);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            position: relative;
+            color: white;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Night sky effect */
+        .night-sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+            z-index: 1;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 900px;
+            z-index: 10;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 5rem;
+            color: #fff;
+            text-shadow: 
+                0 0 15px rgba(255, 255, 255, 0.8),
+                0 0 30px #ff6b9d,
+                0 0 45px rgba(255, 107, 157, 0.7);
+            margin-bottom: 2.5rem;
+            animation: fadeInGlow 3s ease forwards;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            animation: fadeIn 4s ease forwards;
+            opacity: 0;
+            padding: 0 1.5rem;
+        }
+
+        .closing {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: #fff;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 5s ease forwards;
+            opacity: 0;
+            margin-top: 1.5rem;
+        }
+
+        /* Floating Hearts */
+        .hearts-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: floatUp linear infinite;
+            z-index: 1;
+        }
+
+        /* Sparkles */
+        .sparkles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+            animation: sparkle 2s infinite;
+            opacity: 0;
+        }
+
+        /* Animations */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sparkle {
+            0% { 
+                opacity: 0; 
+                transform: scale(0) translate(0, 0); 
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1) translate(var(--tx), var(--ty)); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: scale(1.5) translate(var(--tx), var(--ty)); 
+            }
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes fadeInGlow {
+            from { 
+                opacity: 0; 
+                transform: scale(0.8); 
+                text-shadow: 0 0 0 rgba(255,255,255,0), 
+                             0 0 0 #ff6b9d, 
+                             0 0 0 rgba(255,107,157,0.7);
+            }
+            to { 
+                opacity: 1; 
+                transform: scale(1); 
+                text-shadow: 0 0 15px rgba(255,255,255,0.8),
+                             0 0 30px #ff6b9d,
+                             0 0 45px rgba(255,107,157,0.7);
+            }
+        }
+
+        /* Music controls */
+        .music-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 20;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .music-icon {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            margin-right: 10px;
+        }
+
+        .music-text {
+            color: white;
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+                text-shadow: 
+                    0 0 10px rgba(255, 255, 255, 0.8),
+                    0 0 20px #ff6b9d,
+                    0 0 30px rgba(255, 107, 157, 0.7);
+            }
+            
+            .message {
+                font-size: 1.8rem;
+                line-height: 1.6;
+            }
+            
+            .closing {
+                font-size: 1.8rem;
+            }
+            
+            .music-controls {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px;
+            }
+            
+            .music-text {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .message {
+                font-size: 1.5rem;
+            }
+            
+            .closing {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Night sky overlay -->
+    <div class="night-sky"></div>
+    
+    <!-- Floating hearts container -->
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <!-- Sparkles container -->
+    <div class="sparkles-container" id="sparklesContainer"></div>
+    
+    <!-- Main content -->
+    <div class="container">
+        <h1>Happy New Year 2025 ❤️</h1>
+        <div class="message">
+            You are not just my best friend,<br>
+            you are the most beautiful part of my life. LOVE YOU my dear best frand ever. <br>
+            This New Year, I wish for more smiles,<br>
+            more memories, and more moments with you . Umid hai ab agle sal ladai naa hoga.. ❤️
+        </div>
+        <div class="closing">Always Yours 💖</div>
+    </div>
+    
+    <!-- Music controls -->
+    <div class="music-controls">
+        <svg class="music-icon" viewBox="0 0 24 24">
+            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+        <div class="music-text">Tum Hi Ho - Aashiqui 2</div>
+    </div>
+    
+    <!-- Audio element -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            const colors = ['#ff6b9d', '#ff85a2', '#ff9ec7', '#ffb7d5', '#ffcee8'];
+            
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.className = 'heart';
+                
+                // Random position
+                const leftPos = Math.random() * 100;
+                heart.style.left = `${leftPos}%`;
+                
+                // Random size
+                const size = 1 + Math.random() * 1.5;
+                heart.style.fontSize = `${size}rem`;
+                
+                // Random color
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.color = color;
+                
+                // Random animation duration
+                const duration = 8 + Math.random() * 12;
+                heart.style.animationDuration = `${duration}s`;
+                
+                // Random delay
+                const delay = Math.random() * 5;
+                heart.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Create sparkles
+        function createSparkles() {
+            const container = document.getElementById('sparklesContainer');
+            const sparklesCount = 50;
+            
+            for (let i = 0; i < sparklesCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                // Random position
+                const leftPos = Math.random() * 100;
+                const topPos = Math.random() * 100;
+                sparkle.style.left = `${leftPos}%`;
+                sparkle.style.top = `${topPos}%`;
+                
+                // Random size
+                const size = 2 + Math.random() * 4;
+                sparkle.style.width = `${size}px`;
+                sparkle.style.height = `${size}px`;
+                
+                // Random animation properties
+                const duration = 2 + Math.random() * 3;
+                sparkle.style.animationDuration = `${duration}s`;
+                
+                const delay = Math.random() * 5;
+                sparkle.style.animationDelay = `${delay}s`;
+                
+                // Random movement direction
+                const tx = (Math.random() - 0.5) * 100;
+                const ty = (Math.random() - 0.5) * 100;
+                sparkle.style.setProperty('--tx', `${tx}px`);
+                sparkle.style.setProperty('--ty', `${ty}px`);
+                
+                container.appendChild(sparkle);
+            }
+        }
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            createHearts();
+            createSparkles();
+            
+            // Mute/unmute functionality
+            const musicIcon = document.querySelector('.music-icon');
+            const audio = document.getElementById('backgroundMusic');
+            
+            musicIcon.addEventListener('click', () => {
+                if (audio.muted) {
+                    audio.muted = false;
+                    musicIcon.innerHTML = '<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>';
+                } else {
+                    audio.muted = true;
+                    musicIcon.innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4l-4 4h8l-4-4z"/>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
